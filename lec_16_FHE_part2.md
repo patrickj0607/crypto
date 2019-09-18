@@ -301,7 +301,7 @@ Given a ciphertext $C$, the decryption algorithm takes the dot product modulo $q
 
 
 By repeatedly applying the noisy homomorphism lemma ([noisehomolem](){.ref}), we can show that can homorphically evaluate every circuit of NAND gates whose _depth_ $\ell$  satisfies $(2n\log q)^\ell \ll q$.
-If $q = 2^{\sqrt{n}}$ then (assuming $n$ is sufficiently large) then as long as $\ell < n^{0.49}$ this will be satisfied.
+If $q = 2^{\sqrt{n}}$ then (assuming $n$ is sufficiently large) this will be satisfied as long as $\ell < n^{0.49}$.
 
 In particular to show that $f(\cdot)$ can be homomorphically evaluated it will suffice to show that for every fixed vector $c\in \Z_q^{n\log q}$ there is a $polylog(n) \ll n^{0.49}$ depth circuit $F$ that on input a string $\hat{s}\in\{0,1\}^{n \log q}$ will output $0$ if $|\iprod{c,\hat{s}}|  < q/10$ and output $1$ if $|\iprod{c,\hat{s}}|  > q/5$.
 (We don't care what $F$ does otherwise. The above suffices since given a ciphertext $C$ we can use $F$ with the vector $c$ being the top row of $CQ^\top Q$, and hence $\iprod{c,\hat{s}}$ would correspond to the first entry of $CQ^\top s$. Note that if $F$ has depth $\ell$ then the function $f()$ above has depth at most $\ell+1$.)
